@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (4.7.3)
+  - M13Checkbox (3.2.2)
+  - SwiftyJSON (4.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - M13Checkbox (from `https://github.com/Marxon13/M13Checkbox`, branch `swift_4_2`)
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  M13Checkbox:
+    :branch: swift_4_2
+    :git: https://github.com/Marxon13/M13Checkbox
+
+CHECKOUT OPTIONS:
+  M13Checkbox:
+    :commit: c26efb918e40ae4662dc6659b60f7c5493e94807
+    :git: https://github.com/Marxon13/M13Checkbox
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  M13Checkbox: 82182615a76646475b451ebe448a998f77f8cc6e
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+
+PODFILE CHECKSUM: 79f64180629bf88320b5cea9dda14bb7b5574f79
+
+COCOAPODS: 1.5.3
