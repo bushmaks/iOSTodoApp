@@ -63,14 +63,18 @@
                                                 <action selector="CheckBoxToggle:" destination="6B8-Na-qLp" eventType="valueChanged" id="J94-3K-dfZ"/>
                                             </connections>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhJ-UH-D3m">
-                                            <rect key="frame" x="64" y="18" width="295" height="38"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhJ-UH-D3m">
+                                            <rect key="frame" x="64" y="27" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rhJ-UH-D3m" secondAttribute="trailing" constant="16" id="C9g-Uw-xF8"/>
+                                        <constraint firstItem="rhJ-UH-D3m" firstAttribute="top" secondItem="sPx-rD-Qhh" secondAttribute="top" constant="27" id="YGv-X7-u1d"/>
+                                        <constraint firstItem="rhJ-UH-D3m" firstAttribute="leading" secondItem="sPx-rD-Qhh" secondAttribute="leading" constant="64" id="iHg-kf-CJa"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="CheckBox" destination="PxP-hI-Ny7" id="34n-xh-9Yo"/>
@@ -130,14 +134,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="74.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Название задачи..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ggu-Cq-jhA">
-                                            <rect key="frame" x="16" y="25" width="343" height="39"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Название задачи..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ggu-Cq-jhA">
+                                            <rect key="frame" x="16" y="25" width="343" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="1fe-lG-HQe"/>
+                                            </constraints>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         </textField>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ggu-Cq-jhA" firstAttribute="trailing" secondItem="G07-nV-a1B" secondAttribute="trailingMargin" id="OW1-nm-GmE"/>
+                                        <constraint firstItem="Ggu-Cq-jhA" firstAttribute="leading" secondItem="G07-nV-a1B" secondAttribute="leadingMargin" id="jJm-Ej-3Aq"/>
+                                        <constraint firstItem="Ggu-Cq-jhA" firstAttribute="top" secondItem="G07-nV-a1B" secondAttribute="topMargin" constant="14" id="rGU-X5-2pI"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="field" destination="Ggu-Cq-jhA" id="7ZZ-mK-ahs"/>
