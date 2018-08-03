@@ -9,9 +9,6 @@
 import UIKit
 
 class CreateTodoTableViewCell: UITableViewCell {
-    
-    public var selectedProject = 0
-    
 
     @IBOutlet weak var field: UITextField!
 

@@ -12,6 +12,7 @@ import Alamofire
 class CreateTodoTableViewController: UITableViewController {
     
     // MARK: - Table view data source
+    var selectedProject = 0
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -61,8 +62,7 @@ class CreateTodoTableViewController: UITableViewController {
             
             if (indexPath.row == 0) {
                 self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableView.ScrollPosition.top)
-                let textCell = tableView.dequeueReusableCell(withIdentifier: "CreateTodoText") as! CreateTodoTableViewCell
-                textCell.selectedProject = indexPath.row
+                selectedProject = indexPath.row
                 cell.layer.borderWidth = 2.0
                 cell.layer.borderColor = UIColor.gray.cgColor
             }
@@ -84,8 +84,7 @@ class CreateTodoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if (indexPath.section != 0) {
-            let textCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! CreateTodoTableViewCell
-            textCell.selectedProject = indexPath.row
+            selectedProject = indexPath.row
             let cell = tableView.cellForRow(at: indexPath)
             cell?.layer.borderWidth = 2.0
             cell?.layer.borderColor = UIColor.gray.cgColor
@@ -115,7 +114,7 @@ class CreateTodoTableViewController: UITableViewController {
             let parameters: Parameters = [
                 "todo": [
                     "text": todoText,
-                    "project_id": (cell?.selectedProject)! + 1
+                    "project_id": selectedProject + 1
                 ]
             ]
             

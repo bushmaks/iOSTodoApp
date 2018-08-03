@@ -28,15 +28,15 @@ class TodoListViewController: UITableViewController, CheckboxDelegate {
             }
             // Парсинг JSON
             Projects.removeAll()
-            for prj in arrayOfProjects {
-                let todosArray = prj["todos"]! as! [[String:AnyObject]]
+            for project in arrayOfProjects {
+                let todosArray = project["todos"]! as! [[String:AnyObject]]
                 var Todos: [Todo] = []
                 for t in todosArray {
                     let todo = Todo(Id: t["id"] as! Int, Text: t["text"] as! String, isCompleted: t["isCompleted"] as! Bool, project_id: t["project_id"] as! Int)
                     Todos.append(todo)
                 }
-                let project = Project(Title: prj["title"] as! String, Id: prj["id"] as! Int, Todos: Todos)
-                Projects.append(project)
+                let projectObject = Project(Title: project["title"] as! String, Id: project["id"] as! Int, Todos: Todos)
+                Projects.append(projectObject)
             }
             self.tableView.reloadData()
         }
