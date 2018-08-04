@@ -8,8 +8,14 @@
 
 import Foundation
 
-struct Project {
-    let Title: String
-    let Id: Int
-    var Todos: [Todo]
+class Project {
+    let title: String
+    let id: Int
+    var todos: [Todo]
+    
+    init(title: String, id: Int, todos: [Todo]) {
+        self.title = title
+        self.id = id
+        self.todos = todos
+    }
 }

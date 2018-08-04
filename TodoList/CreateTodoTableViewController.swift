@@ -12,7 +12,7 @@ import Alamofire
 class CreateTodoTableViewController: UITableViewController {
     
     // MARK: - Table view data source
-    var selectedProject = 0
+    private(set) var selectedProject = 0
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -21,7 +21,7 @@ class CreateTodoTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let numberOfRowsAtSection: [Int] = [1, Projects.count]
+        let numberOfRowsAtSection: [Int] = [1, projects.count]
         var rows: Int = 0
         
         if section < numberOfRowsAtSection.count {
@@ -58,7 +58,7 @@ class CreateTodoTableViewController: UITableViewController {
             return textCell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath)
-            cell.textLabel?.text = Projects[indexPath.row].Title
+            cell.textLabel?.text = projects[indexPath.row].title
             
             if (indexPath.row == 0) {
                 self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableView.ScrollPosition.top)
@@ -103,17 +103,17 @@ class CreateTodoTableViewController: UITableViewController {
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    public var todoText = ""
+    private(set) var todoText: String?
     @IBAction func doneButton(_ sender: Any) {
         let indexPath = IndexPath(row: 0, section: 0)
         let cell = tableView.cellForRow(at: indexPath) as? CreateTodoTableViewCell
         
-        if cell?.field.text != "" {
+        if cell?.field.text != nil {
             todoText = (cell?.field.text)!
             
             let parameters: Parameters = [
                 "todo": [
-                    "text": todoText,
+                    "text": todoText ?? "None",
                     "project_id": selectedProject + 1
                 ]
             ]

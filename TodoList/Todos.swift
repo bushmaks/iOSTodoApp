@@ -8,9 +8,17 @@
 
 import Foundation
 
-struct Todo {
-    let Id: Int
-    let Text: String
+class Todo {
+    let id: Int
+    let text: String
     var isCompleted: Bool
     let project_id: Int
+    
+    
+    init(id: Int, text: String, isCompleted: Bool, project_id: Int) {
+        self.id = id
+        self.text = text
+        self.isCompleted = isCompleted
+        self.project_id = project_id
+    }
 }
